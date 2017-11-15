@@ -1,0 +1,134 @@
+﻿@*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common-material.min.css" />*@
+@*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.min.css" />*@
+@*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.mobile.min.css" />*@
+
+<style>
+    .newspace {
+        padding-bottom: 10px;
+    }
+
+    .ui-notification {
+        z-index: 99999;
+        width: 500px;
+        /*text-align: center;*/
+    }
+
+    .mini_grown {
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    #windowHinhDuAn {
+        overflow: hidden !important;
+    }
+
+    #txtGhiChu {
+        height: 50px;
+        width: 100% !important;
+    }
+
+    #txtYeuCau {
+        height: 100px;
+        width: 99% !important;
+    }
+
+
+    .col-md-2 {
+        width: 13.7%;
+    }
+
+    .col-md-9 {
+        width: 81%;
+    }
+
+    #windowDuAnChiTiet {
+        overflow: hidden;
+    }
+
+    #windowImportCanHo {
+        overflow-x: hidden;
+    }
+    /*.k-widget.k-tooltip-validation {
+        position: absolute;
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: -24px;
+    }*/
+    /*.k-numerictextbox .k-icon {
+
+        display: inline-block;
+        height: 1em;
+    }*/
+    .k-picker-wrap.k-state-default > .k-widget.k-tooltip-validation, .k-numeric-wrap.k-state-default > .k-widget.k-tooltip-validation {
+        display: block;
+        position: absolute;
+    }
+</style>
+<div id="bodyTotal" style="overflow:hidden">
+    <form kendo-validator="validator" ng-submit="validate($event)">
+        <div class="btbody">
+            <div class="row newspace">
+                <div class="col-md-6 row">
+                    <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;">Loại Quy Định</div>
+                    <div class="col-md-4">
+                        @*<span class="k-widget k-combobox k-header ng-pristine ng-untouched k-combobox-clearable ng-valid ng-valid-required" style="width: 100%;">*@
+                        @*<span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default">*@
+                        @*</span>*@
+                        <select id="cbbLoaiQuyDinh" kendo-combo-box k-placeholder="'Chọn Loại Quy Định..'" k-data-text-field="'GiaTri'" k-data-value-field="'ID_GiaTri'" k-filter="'contains'" k-auto-bind="true" k-min-length="3" k-data-source="QuyDinh" name="Loại Quy Định" required="" validationmessage="Vui lòng chọn {0}" ng-model="itemAdd.LoaiThuoc" style="width: 100%; display: none;" class="ng-untouched ng-pristine ng-valid ng-valid-required" data-role="combobox" aria-disabled="false"></select></span>
+                    </div>
+                </div>
+                <div class="col-md-4 row">
+                    <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;">Tên Quy Định</div>
+                    <input type="text" id="txtThuoc" name="txtThuoc" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.tenDinhNghia" />
+                </div>
+            </div>
+            @*<div class="row newspace">
+                <div class="col-md-6 row">
+                    <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;">S</div>
+                    <div class="col-md-4">
+                        <input type="text" id="txtSoLuong" name="txtThuoc" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.SoLuong" />
+                    </div>
+                </div>
+                <div class="col-md-4 row">
+                    <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;"></div>
+                    <input type="text" id="txtThuoc" name="txtThuoc" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.DonGia" />
+                </div>
+            </div>*@
+            <div class="row newspace">
+                <div class="col-md-6 row">
+                    <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;">Ghi chú</div>
+                    <div class="col-md-4">
+                        <textarea id="txtGhiChu" name="txtGhiChu" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.GhiChu"></textarea>
+
+                    </div>
+                </div>
+                @*<div class="col-md-4 row">
+                        <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;">TEst 2 </div>
+                        <input type="text" id="txtThuoc" name="txtThuoc" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.DonGia" />
+                    </div>*@
+            </div>
+            @*<div class="row newspace">
+                <div class="col-md-12 row">
+                    <div class="col-md-4" style="text-align:right;padding-top:5px;padding-left:0px;">Ghi chú</div></div>
+                    <div class="col-md-8">
+                        <textarea id="txtGhiChu" name="txtGhiChu" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.GhiChu"></textarea>
+                    </div>
+                </div>*@
+        </div>
+        <div class="row" align="center">
+            <div class="btn-row">
+                <button class="btn btn-primary" type="submit" id="btnLuu" ng-click="btnLuu()">Lưu</button>
+                <button type="button" class="btn btn-primary" id="btnHuy" ng-click="btnHuy()">Hủy</button>&nbsp;
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,2042 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4C49EC4-8E3B-428B-A63A-90D28F956E48}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhongMach_Ver_1._0.Web</RootNamespace>
+    <AssemblyName>PhongMach_Ver_1.0.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BenhAnController.cs" />
+    <Compile Include="Controllers\CTDTController.cs" />
+    <Compile Include="Controllers\CTHDController.cs" />
+    <Compile Include="Controllers\DinhNghiaGiaTriController.cs" />
+    <Compile Include="Controllers\DonThuocController.cs" />
+    <Compile Include="Controllers\GiaTriMacDinhController.cs" />
+    <Compile Include="Controllers\HoaDonController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\BenhNhanController.cs" />
+    <Compile Include="Controllers\LichKhamController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\ThuocController.cs" />
+    <Compile Include="Excel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\additional-methods.min - Copy.js" />
+    <Content Include="Content\additional-methods.min.js" />
+    <Content Include="Content\admintemplate\css\bootstrap-table.css" />
+    <Content Include="Content\admintemplate\css\bootstrap-theme.css" />
+    <Content Include="Content\admintemplate\css\bootstrap-theme.min.css" />
+    <Content Include="Content\admintemplate\css\bootstrap.css" />
+    <Content Include="Content\admintemplate\css\bootstrap.min.css" />
+    <Content Include="Content\admintemplate\css\datepicker.css" />
+    <Content Include="Content\admintemplate\css\datepicker3.css" />
+    <Content Include="Content\admintemplate\css\styles.css" />
+    <Content Include="Content\admintemplate\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\admintemplate\js\bootstrap-datepicker.js" />
+    <Content Include="Content\admintemplate\js\bootstrap-table.js" />
+    <Content Include="Content\admintemplate\js\bootstrap.js" />
+    <Content Include="Content\admintemplate\js\bootstrap.min.js" />
+    <Content Include="Content\admintemplate\js\chart-data.js" />
+    <Content Include="Content\admintemplate\js\chart.min.js" />
+    <Content Include="Content\admintemplate\js\easypiechart-data.js" />
+    <Content Include="Content\admintemplate\js\easypiechart.js" />
+    <Content Include="Content\admintemplate\js\html5shiv.min.js" />
+    <Content Include="Content\admintemplate\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\admintemplate\js\respond.min.js" />
+    <Content Include="Content\angular-ui-notification.min.css" />
+    <Content Include="Content\bootstrap - Copy.js" />
+    <Content Include="Content\bootstrap-switch - Copy.js" />
+    <Content Include="Content\bootstrap-switch.js" />
+    <Content Include="Content\bootstrap-wysiwyg - Copy.js" />
+    <Content Include="Content\bootstrap-wysiwyg-custom - Copy.js" />
+    <Content Include="Content\bootstrap-wysiwyg-custom.js" />
+    <Content Include="Content\bootstrap-wysiwyg.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.js" />
+    <Content Include="Content\bootstrap.min - Copy.js" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\calendar-custom - Copy.js" />
+    <Content Include="Content\calendar-custom.js" />
+    <Content Include="Content\chartjs-custom.js" />
+    <Content Include="Content\charts-flot.js" />
+    <Content Include="Content\charts-other.js" />
+    <Content Include="Content\charts-xcharts.js" />
+    <Content Include="Content\charts.js" />
+    <Content Include="Content\dynamic-table.js" />
+    <Content Include="Content\easy-pie-chart.js" />
+    <Content Include="Content\excanvas.min.js" />
+    <Content Include="Content\form-component.js" />
+    <Content Include="Content\form-validation-script.js" />
+    <Content Include="Content\fullcalendar.js" />
+    <Content Include="Content\fullcalendar.min.js" />
+    <Content Include="Content\ga.js" />
+    <Content Include="Content\gdp-data.js" />
+    <Content Include="Content\gritter.js" />
+    <Content Include="Content\html5shiv.js" />
+    <Content Include="Content\index.js" />
+    <Content Include="Content\jquery-1.8.3.min.js" />
+    <Content Include="Content\jquery-1.9.1.js" />
+    <Content Include="Content\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\jquery-ui-1.10.4.min.js" />
+    <Content Include="Content\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\jquery.autosize.min.js" />
+    <Content Include="Content\jquery.customSelect.min.js" />
+    <Content Include="Content\jquery.flot.pie.js" />
+    <Content Include="Content\jquery.hotkeys.js" />
+    <Content Include="Content\jquery.js" />
+    <Content Include="Content\jquery.localscroll.js" />
+    <Content Include="Content\jquery.nicescroll.js" />
+    <Content Include="Content\jquery.placeholder.min.js" />
+    <Content Include="Content\jquery.rateit.min.js" />
+    <Content Include="Content\jquery.scrollTo.min.js" />
+    <Content Include="Content\jquery.slimscroll.min.js" />
+    <Content Include="Content\jquery.smartWizard.js" />
+    <Content Include="Content\jquery.sparkline-11.js" />
+    <Content Include="Content\jquery.sparkline.js" />
+    <Content Include="Content\jquery.stepy.js" />
+    <Content Include="Content\jquery.tagsinput.js" />
+    <Content Include="Content\jquery.validate.min.js" />
+    <Content Include="Content\js\additional-methods.min.js" />
+    <Content Include="Content\js\bootstrap-switch.js" />
+    <Content Include="Content\js\bootstrap-wysiwyg-custom.js" />
+    <Content Include="Content\js\bootstrap-wysiwyg.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\calendar-custom.js" />
+    <Content Include="Content\js\chartjs-custom.js" />
+    <Content Include="Content\js\charts-flot.js" />
+    <Content Include="Content\js\charts-other.js" />
+    <Content Include="Content\js\charts-xcharts.js" />
+    <Content Include="Content\js\charts.js" />
+    <Content Include="Content\js\dynamic-table.js" />
+    <Content Include="Content\js\easy-pie-chart.js" />
+    <Content Include="Content\js\excanvas.min.js" />
+    <Content Include="Content\js\form-component.js" />
+    <Content Include="Content\js\form-validation-script.js" />
+    <Content Include="Content\js\fullcalendar.js" />
+    <Content Include="Content\js\fullcalendar.min.js" />
+    <Content Include="Content\js\ga.js" />
+    <Content Include="Content\js\gdp-data.js" />
+    <Content Include="Content\js\gritter.js" />
+    <Content Include="Content\js\html5shiv.js" />
+    <Content Include="Content\js\index.js" />
+    <Content Include="Content\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\js\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="Content\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\js\jquery.autosize.min.js" />
+    <Content Include="Content\js\jquery.customSelect.min.js" />
+    <Content Include="Content\js\jquery.flot.pie.js" />
+    <Content Include="Content\js\jquery.hotkeys.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.localscroll.js" />
+    <Content Include="Content\js\jquery.nicescroll.js" />
+    <Content Include="Content\js\jquery.placeholder.min.js" />
+    <Content Include="Content\js\jquery.rateit.min.js" />
+    <Content Include="Content\js\jquery.scrollTo.min.js" />
+    <Content Include="Content\js\jquery.slimscroll.min.js" />
+    <Content Include="Content\js\jquery.smartWizard.js" />
+    <Content Include="Content\js\jquery.sparkline-11.js" />
+    <Content Include="Content\js\jquery.sparkline.js" />
+    <Content Include="Content\js\jquery.stepy.js" />
+    <Content Include="Content\js\jquery.tagsinput.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\lte-ie7.js" />
+    <Content Include="Content\js\morris-script.js" />
+    <Content Include="Content\js\morris.min.js" />
+    <Content Include="Content\js\owl.carousel.js" />
+    <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\js\sliders.js" />
+    <Content Include="Content\js\sparkline-chart.js" />
+    <Content Include="Content\js\sparklines.js" />
+    <Content Include="Content\js\xcharts.min.js" />
+    <Content Include="Content\kendo\2016.2.607\Black\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Black\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Black\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Black\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Black\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Black\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Black\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Black\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Default\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Default\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Default\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Default\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Default\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Default\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Default\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Flat\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Flat\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Flat\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Flat\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Flat\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Flat\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Flat\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="Content\kendo\2016.2.607\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\images\back.png" />
+    <Content Include="Content\kendo\2016.2.607\images\kendoui.svg" />
+    <Content Include="Content\kendo\2016.2.607\images\wp8_icons.png" />
+    <Content Include="Content\kendo\2016.2.607\images\wp8_inverseicons.png" />
+    <Content Include="Content\kendo\2016.2.607\kendo.black.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.black.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.blueopal.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.blueopal.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-bootstrap.core.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-fiori.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-material.core.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-material.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-nova.core.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-nova.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-office365.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common.core.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.dataviz.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.default.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.default.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.fiori.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.fiori.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.flat.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.flat.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.highcontrast.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.highcontrast.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.material.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.material.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.materialblack.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.materialblack.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metro.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metro.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metroblack.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metroblack.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.all.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.android.dark.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.android.light.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.common.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.fiori.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.flat.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.ios.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.material.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.meego.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.nova.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.office365.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.wp8.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.moonlight.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.moonlight.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.nova.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.nova.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.office365.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.office365.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.rtl.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.silver.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.silver.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.uniform.min.css" />
+    <Content Include="Content\kendo\2016.2.607\kendo.uniform.mobile.min.css" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Material\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Material\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Material\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Material\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Material\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Material\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Material\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Metro\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Metro\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Metro\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Metro\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Metro\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Metro\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Metro\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Nova\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Nova\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Nova\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Nova\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Nova\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Nova\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Nova\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Office365\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Office365\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Office365\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Office365\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Office365\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Office365\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Office365\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Silver\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Silver\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Silver\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Silver\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Silver\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Silver\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Silver\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\brushed-metal.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots1.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots10.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots11.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots12.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots13.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots2.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots3.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots4.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots5.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots6.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots7.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots8.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\dots9.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\glass-lighter.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\glass.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\highlight.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\hsv-gradient.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\hue.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\leather1.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\leather2.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\noise.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\stripe1.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\stripe2.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\stripe3.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\stripe4.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\stripe5.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\stripe6.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\transparency.png" />
+    <Content Include="Content\kendo\2016.2.607\textures\transtexture.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\editor.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\imagebrowser.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\indeterminate.gif" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\loading-image.gif" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\loading.gif" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\loading_2x.gif" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\markers.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\markers_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\slider-h.gif" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\slider-v.gif" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\sprite.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\sprite_2x.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\sprite_kpi.png" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\lte-ie7.js" />
+    <Content Include="Content\morris-script.js" />
+    <Content Include="Content\morris.min.js" />
+    <Content Include="Content\owl.carousel.js" />
+    <Content Include="Content\scripts.js" />
+    <Content Include="Content\sliders.js" />
+    <Content Include="Content\sparkline-chart.js" />
+    <Content Include="Content\sparklines.js" />
+    <Content Include="Content\xcharts.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-ui-notification.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\BaseFunction.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\admintemplate\css\bootstrap-theme.css.map" />
+    <Content Include="Content\admintemplate\css\bootstrap.css.map" />
+    <Content Include="Content\admintemplate\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\admintemplate\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\admintemplate\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\admintemplate\tables\data1.json" />
+    <Content Include="Content\admintemplate\tables\data2.json" />
+    <Content Include="Content\js\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Black\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\BlueOpal\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Bootstrap\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Default\Thumbs.db" />
+    <Content Include="Content\kendo\2016.2.607\Default\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\Thumbs.db" />
+    <Content Include="Content\kendo\2016.2.607\Fiori\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Flat\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\DejaVu\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="Content\kendo\2016.2.607\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="Content\kendo\2016.2.607\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="Content\kendo\2016.2.607\fonts\glyphs\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\HighContrast\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\images\kendoui.ttf" />
+    <Content Include="Content\kendo\2016.2.607\images\kendoui.woff" />
+    <Content Include="Content\kendo\2016.2.607\images\Thumbs.db" />
+    <Content Include="Content\kendo\2016.2.607\images\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\kendo.black.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.black.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.blueopal.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.blueopal.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.bootstrap.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.bootstrap.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-bootstrap.core.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-bootstrap.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-fiori.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-material.core.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-material.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-nova.core.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-nova.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common-office365.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common.core.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.common.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.dataviz.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.default.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.default.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.fiori.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.fiori.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.flat.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.flat.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.highcontrast.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.highcontrast.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.material.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.material.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.materialblack.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.materialblack.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metro.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metro.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metroblack.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.metroblack.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.all.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.android.dark.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.android.light.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.blackberry.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.common.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.fiori.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.flat.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.ios.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.material.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.meego.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.nova.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.office365.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.mobile.wp8.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.moonlight.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.moonlight.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.nova.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.nova.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.office365.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.office365.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.rtl.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.silver.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.silver.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.uniform.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\kendo.uniform.mobile.min.css.map" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\Thumbs.db" />
+    <Content Include="Content\kendo\2016.2.607\MaterialBlack\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Material\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\MetroBlack\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Metro\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Moonlight\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Nova\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Office365\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Silver\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\textures\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\Uniform\vssver2.scc" />
+    <Content Include="Content\kendo\2016.2.607\vssver2.scc" />
+    <Content Include="Content\vssver2.scc" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\angular.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.af.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.am.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.arn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.as.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ba.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.be.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bo.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.br.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ca-ES-valencia.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ca.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.chr-Cher-US.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.chr-Cher.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.chr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.co.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cs.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cy.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.da.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dv.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.el.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-HK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-419.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.et.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.eu.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fa.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ff-Latn-SN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ff-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ff.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fi.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fil.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fo.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CD.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-HT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-MA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-ML.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-RE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-SN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fy.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ga.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gd.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gn-PY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gu.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ha.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.haw-US.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.haw.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.he.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hi.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hu.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hy.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.id.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ig.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ii.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.is.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.it.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ja.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.jv-Latn-ID.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.jv-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.jv.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ka.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kk.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.km.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ko.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kok.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ku-Arab-IQ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ku-Arab.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ku.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ky.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lb.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lo.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lt.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lv.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mg-MG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mg.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mi.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mk.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ml.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Mong-MN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.moh.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ms.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mt.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.my-MM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.my.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nb.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ne-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ne.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.no.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nqo-GN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nqo.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nso.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.oc.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.om-ET.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.om.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.or.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa-Arab-PK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa-Arab.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.prs.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ps.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt-AO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.qut.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rm.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ro-MD.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ro.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ru.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rw.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sa.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sah.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sd-Arab-PK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sd-Arab.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sd.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.si.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sk.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sma.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smj.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sms.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sn-Latn-ZW.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sn-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.so-SO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.so.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sq.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.st-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.st.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sv.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sw.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.syr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ta-LK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ta.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.te.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tg.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.th.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ti-ER.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ti-ET.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ti.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tk.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tn-BW.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ts-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ts.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tt.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Tfng-MA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Tfng.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ug.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uk.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ur-IN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ur.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.vi.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.wo.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.xh.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.yo.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zgh-Tfng-MA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zgh-Tfng.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zgh.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\jquery.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.all.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.angular.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.angular2.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.binder.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.button.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.calendar.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.color.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.combobox.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.core.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.odata.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.xml.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.datepicker.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.editable.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.fx.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.list.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.listview.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.menu.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.collapsible.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.loader.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.multiselect.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.notification.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.pager.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.panelbar.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.popup.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.progressbar.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.resizable.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.responsivepanel.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.router.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.selectable.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.slider.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.sortable.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.splitter.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.timepicker.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.timezones.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.toolbar.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.tooltip.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.touch.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.ui.core.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.userevents.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.validator.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.view.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.virtuallist.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.webcomponents.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.window.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.bg-BG.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.cs-CZ.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.da-DK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-AT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-DE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-LI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-AU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-GB.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-US.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-AR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-BO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-CL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-CO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-CR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-DO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-EC.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-GT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-HN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-MX.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-NI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-US.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-UY.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-VE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fi-FI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-BE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CD.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CI.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-FR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-HT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-LU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-MA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-MC.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-ML.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-SN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.he-IL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.hy-AM.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.it-CH.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.it-IT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.ja-JP.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.nb-NO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.nl-BE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.nl-NL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.pl-PL.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.pt-BR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.pt-PT.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.ro-RO.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.ru-RU.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.sk-SK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.sv-SE.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.tr-TR.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.uk-UA.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.zh-CN.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.zh-HK.min.js" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.zh-TW.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\View\BenhAn.js" />
+    <Content Include="Scripts\View\BenhNhan.js" />
+    <Content Include="Scripts\View\DinhNghiaGiaTri.js" />
+    <Content Include="Scripts\View\GiaTriMacDinh.js" />
+    <Content Include="Scripts\View\HoaDon.js" />
+    <Content Include="Scripts\View\LichHen.js" />
+    <Content Include="Scripts\View\NguoiDung.js" />
+    <Content Include="Scripts\View\Thuoc.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.af-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.af.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.am-ET.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.am.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-AE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-BH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-DZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-EG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-IQ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-JO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-KW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-LB.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-LY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-MA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-OM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-QA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-SA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-SY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-TN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar-YE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ar.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.arn-CL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.arn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.as-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.as.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Cyrl-AZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Cyrl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Latn-AZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.az.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ba-RU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ba.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.be-BY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.be.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bg-BG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bg.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bn-BD.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bn-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bo-CN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bo.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.br-FR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.br.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Cyrl-BA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Cyrl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Latn-BA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.bs.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ca-ES-valencia.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ca-ES.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ca.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.chr-Cher-US.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.chr-Cher.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.chr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.co-FR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.co.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cs-CZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cs.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cy-GB.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.cy.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.da-DK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.da.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-AT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-DE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-LI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de-LU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.de.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dsb-DE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dsb.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dv-MV.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.dv.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.el-GR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.el.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-029.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-AU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-BZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-GB.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-HK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-IE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-JM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-MY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-NZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-PH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-SG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-TT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-US.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en-ZW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.en.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-419.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-AR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-BO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-CL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-CO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-CR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-DO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-EC.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-ES.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-GT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-HN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-MX.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-NI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-PY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-SV.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-US.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-UY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es-VE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.es.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.et-EE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.et.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.eu-ES.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.eu.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fa-IR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fa.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ff-Latn-SN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ff-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ff.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fi-FI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fi.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fil-PH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fil.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fo-FO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fo.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-BE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CD.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-CM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-FR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-HT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-LU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-MA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-MC.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-ML.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-RE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr-SN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fy-NL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.fy.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ga-IE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ga.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gd-GB.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gd.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gl-ES.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gn-PY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gsw-FR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gsw.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gu-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.gu.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ha-Latn-NG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ha-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ha.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.haw-US.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.haw.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.he-IL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.he.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hi-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hi.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hr-BA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hr-HR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hsb-DE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hsb.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hu-HU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hu.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hy-AM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.hy.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.id-ID.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.id.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ig-NG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ig.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ii-CN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ii.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.is-IS.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.is.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.it-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.it-IT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.it.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Cans-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Cans.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Latn-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.iu.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ja-JP.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ja.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.jv-Latn-ID.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.jv-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.jv.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ka-GE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ka.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kk-KZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kk.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kl-GL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.km-KH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.km.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kn-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ko-KR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ko.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kok-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.kok.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ku-Arab-IQ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ku-Arab.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ku.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ky-KG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ky.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lb-LU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lb.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lo-LA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lo.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lt-LT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lt.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lv-LV.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.lv.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mg-MG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mg.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mi-NZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mi.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mk-MK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mk.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ml-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ml.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Cyrl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-MN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Mong-CN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Mong-MN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn-Mong.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.moh-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.moh.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mr-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ms-BN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ms-MY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ms.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mt-MT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.mt.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.my-MM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.my.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nb-NO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nb.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ne-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ne-NP.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ne.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nl-BE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nl-NL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nn-NO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.no.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nqo-GN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nqo.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nso-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.nso.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.oc-FR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.oc.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.om-ET.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.om.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.or-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.or.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa-Arab-PK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa-Arab.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pa.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pl-PL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.prs-AF.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.prs.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ps-AF.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ps.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt-AO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt-BR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt-PT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.pt.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.qut-GT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.qut.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz-BO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz-EC.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz-PE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.quz.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rm-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rm.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ro-MD.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ro-RO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ro.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ru-RU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ru-UA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ru.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rw-RW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.rw.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sa-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sa.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sah-RU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sah.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sd-Arab-PK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sd-Arab.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sd.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se-FI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se-NO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se-SE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.se.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.si-LK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.si.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sk-SK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sk.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sl-SI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sma-NO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sma-SE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sma.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smj-NO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smj-SE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smj.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smn-FI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.smn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sms-FI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sms.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sn-Latn-ZW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sn-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.so-SO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.so.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sq-AL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sq.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-BA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-CS.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-ME.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl-RS.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Cyrl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-BA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-CS.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-ME.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn-RS.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.st-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.st.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sv-FI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sv-SE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sv.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sw-KE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.sw.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.syr-SY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.syr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ta-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ta-LK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ta.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.te-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.te.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tg-Cyrl-TJ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tg-Cyrl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tg.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.th-TH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.th.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ti-ER.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ti-ET.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ti.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tk-TM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tk.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tn-BW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tn-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tr-TR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ts-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ts.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tt-RU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tt.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Latn-DZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Tfng-MA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm-Tfng.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.tzm.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ug-CN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ug.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uk-UA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uk.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ur-IN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ur-PK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.ur.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Cyrl-UZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Cyrl.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Latn-UZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz-Latn.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.uz.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.vi-VN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.vi.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.wo-SN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.wo.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.xh-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.xh.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.yo-NG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.yo.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zgh-Tfng-MA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zgh-Tfng.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zgh.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-CHS.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-CHT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-CN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-Hans.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-Hant.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-HK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-MO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-SG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh-TW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zh.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zu-ZA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\kendo.culture.zu.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\cultures\vssver2.scc" />
+    <Content Include="Scripts\kendo\2016.2.607\jquery.min.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.angular.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.angular2.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.autocomplete.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.binder.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.button.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.calendar.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.color.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.colorpicker.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.combobox.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.core.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.odata.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.signalr.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.data.xml.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.datepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.datetimepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.draganddrop.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.dropdownlist.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.editable.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.fx.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.list.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.listview.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.maskedtextbox.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.menu.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.actionsheet.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.application.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.button.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.buttongroup.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.collapsible.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.drawer.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.listview.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.loader.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.modalview.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.navbar.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.pane.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.popover.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.scroller.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.scrollview.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.shim.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.splitview.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.switch.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.tabstrip.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.mobile.view.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.multiselect.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.notification.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.numerictextbox.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.pager.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.panelbar.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.popup.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.progressbar.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.resizable.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.responsivepanel.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.router.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.selectable.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.slider.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.sortable.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.splitter.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.tabstrip.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.timepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.timezones.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.toolbar.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.tooltip.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.touch.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.ui.core.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.userevents.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.validator.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.view.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.virtuallist.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.webcomponents.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\kendo.window.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.bg-BG.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.cs-CZ.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.da-DK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-AT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-DE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.de-LI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-AU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-GB.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.en-US.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-AR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-BO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-CL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-CO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-CR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-DO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-EC.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-ES.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-GT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-HN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-MX.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-NI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-PY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-US.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-UY.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.es-VE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fi-FI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-BE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CD.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CI.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-CM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-FR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-HT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-LU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-MA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-MC.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-ML.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.fr-SN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.he-IL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.hy-AM.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.it-CH.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.it-IT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.ja-JP.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.nb-NO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.nl-BE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.nl-NL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.pl-PL.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.pt-BR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.pt-PT.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.ro-RO.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.ru-RU.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.sk-SK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.sv-SE.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.tr-TR.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.uk-UA.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.zh-CN.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.zh-HK.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\kendo.messages.zh-TW.min.js.map" />
+    <Content Include="Scripts\kendo\2016.2.607\messages\vssver2.scc" />
+    <Content Include="Scripts\kendo\2016.2.607\vssver2.scc" />
+    <Content Include="Views\Thuoc\Index.cshtml" />
+    <Content Include="Views\Thuoc\CreateThuoc.cshtml" />
+    <Content Include="Views\LichKham\Index.cshtml" />
+    <Content Include="Views\LichKham\CreateLichHen.cshtml" />
+    <Content Include="Views\GiaTriMacDinh\CreateGiaTriMacDinh.cshtml" />
+    <Content Include="Views\GiaTriMacDinh\Index.cshtml" />
+    <Content Include="Views\BenhNhan\Index.cshtml" />
+    <Content Include="Views\BenhNhan\CreateBenhNhan.cshtml" />
+    <Content Include="Views\BenhAn\Index.cshtml" />
+    <Content Include="Views\DinhNghiaGiaTri\Index.cshtml" />
+    <Content Include="Views\DonThuoc\Index.cshtml" />
+    <Content Include="Views\HoaDon\Index.cshtml" />
+    <Content Include="Views\NguoiDung\Index.cshtml" />
+    <Content Include="Views\BenhAn\CreateBenhAn.cshtml" />
+    <Content Include="Views\DonThuoc\CreateDonThuoc.cshtml" />
+    <Content Include="Views\NguoiDung\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\CTDT\" />
+    <Folder Include="Views\CTHD\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhongMach_Ver_1.0.Datamodel\PhongMach_Ver_1.0.Datamodel.csproj">
+      <Project>{59FA0176-8072-42F7-8173-26934BB70BB2}</Project>
+      <Name>PhongMach_Ver_1.0.Datamodel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhongMach_Ver_1.0.Entities\PhongMach_Ver_1.0.Entities.csproj">
+      <Project>{05391A7F-A081-40C9-AD25-76EB6D49B5D7}</Project>
+      <Name>PhongMach_Ver_1.0.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhongMach_Ver_1.0.Models\PhongMach_Ver_1.0.Models.csproj">
+      <Project>{ECCCE605-965A-434E-9AA1-019C0A561ACE}</Project>
+      <Name>PhongMach_Ver_1.0.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhongMach_Ver_1.0.Services\PhongMach_Ver_1.0.Services.csproj">
+      <Project>{1A2CF8C0-FF51-43F8-B86A-0F3F3E0CB7FF}</Project>
+      <Name>PhongMach_Ver_1.0.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65154</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65154/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

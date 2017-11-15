@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="text-align:center">Bệnh Nhân</h2>
+<div ng-app="KendoDemos" ng-controller="MyCtrl">
+    <div style="margin-bottom:7px">
+        <select id="cbbLoaiThuoc" kendo-combo-box
+                k-placeholder="'Loại Khách Hàng...'"
+                k-data-text-field="'GiaTri'"
+                k-data-value-field="'GiaTri'"
+                k-filter="'contains'"
+                k-auto-bind="true"
+                k-min-length="3"
+                k-data-source="Data_KH"
+                ng-model="itemSearch.LoaiKhachHang" style="width:200px"></select>
+        <label class="DonVi-label" for="DonVi" style="margin-left:30px">Tên Bệnh Nhân</label>
+        <input type="text" id="txtTenKhachHang" name="txtTenKhachHang" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemSearch.TenKhachHang" />
+        <kendo-button type="button" class="btn btn-primary" id="btnLoc" ng-click="LocBenhNhan()" style="margin-right:80px">Lọc</kendo-button>&nbsp;
+        <kendo-button type="button" class="btn btn-primary" id="btnThem" ng-click="ThemBenhNhan()">Thêm</kendo-button>&nbsp;
+        <kendo-button type="button" class="btn btn-primary" id="btnExcel" ng-click="ExportExcel()">Export</kendo-button>&nbsp;
+        <kendo-button type="button" class="btn btn-primary" id="btnImport" ng-click="ImportExcel()">Import</kendo-button>&nbsp;
+    </div>
+    <div id="CreateBenhNhan" style="display: none">
+        @Html.Partial("CreateBenhNhan")
+    </div>
+    <kendo-grid id="grid" k-options="mainGridOptions">
+        <div k-detail-template>
+            <kendo-tabstrip>
+                <ul>
+                    <li class="k-state-active">Bệnh Án</li>
+                    <li >Hóa Đơn</li>
+                </ul>
+                <div>
+                    <div kendo-grid k-options="detailGridOptions(dataItem)"></div>
+                </div>
+                <div>
+                    <div kendo-grid k-options="detailGridOptions_2(dataItem)"></div>
+                    @*<p>Hello</p>*@
+                </div>
+            </kendo-tabstrip>
+        </div>
+    </kendo-grid>
+    <div id="windowConfirm">
+        <div id="messageConfirm" style="padding:0px 5px; min-height: 40px;"></div>
+        <div style="text-align: center;">
+            <button class="k-button delete-confirm" id="yesButton">Đồng ý</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="k-button delete-cancel" id="noButton"> Hủy bỏ</button>
+        </div>
+    </div>
+    <div id="windowImport" style="display: none">
+        <div id="bodyTotal">
+            <div class="btBody container-fluid">
+                <div class="col-md-12">
+                    <input name="files"
+                           type="file"
+                           kendo-upload
+                           showFileList="false"
+                           k-async="{ saveUrl: '/Thuoc/SaveImportYeuCau',removeUrl: '#' ,autoUpload: true }"
+                           k-select="selectFileImport"
+                           k-success="uploadSuccessImport" />
+                </div>
+                <div class="col-md-12" align="center">
+                    <a href="#" target="_blank">Download File Excel mẫu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/x-kendo-template" id="toolBarTemplate">
+    </script>
+    <script src="~/Scripts/View/BenhNhan.js"></script>
+</div>

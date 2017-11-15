@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <h2>Login to System</h2>
+    <p>Your Account :</p>
+    <input placeholder="Username" name="username" id="username" type="text" autofocus><br>
+    <p>Password :</p>
+    <input placeholder="Password" name="password" id="password" type="password"><br>
+    <button type="submit" id="btnDangNhap">Submit</button><br>
+    <script>
+    $(Document).ready(function () {
+
+    });
+    document.getElementById("btnDangNhap").onclick = function () { Login() };
+
+        function Login() {
+            var username = $("#username").val();
+            var pass = $("#password").val();
+            $.ajax({
+                serverFiltering: true,
+                type: "POST",
+                url: "../../NguoiDung/Login",
+                data: JSON.stringify({ username: username, password: pass }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    if (r == 'Welcome')
+                        location.href = '@Url.Action("Index", "BenhNhan")';
+                    else if (r == 'Bad_request') {
+                       alert("Wrong Information or The Account Doesn't Exist")
+                    }
+
+                },
+                error: function (r) {
+                    alert(r.responseText);
+                },
+                failure: function (r) {
+                    alert(r.responseText);
+                }
+            });
+        };
+    </script>
+</body>
+
+

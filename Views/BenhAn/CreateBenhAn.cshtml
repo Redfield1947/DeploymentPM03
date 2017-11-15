@@ -1,0 +1,164 @@
+﻿<style>
+    .newspace {
+        padding-bottom: 10px;
+    }
+
+    .ui-notification {
+        z-index: 99999;
+        width: 500px;
+        /*text-align: center;*/
+    }
+
+    .mini_grown {
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    #windowHinhDuAn {
+        overflow: hidden !important;
+    }
+
+
+    .col-md-2 {
+        width: 13.7%;
+    }
+
+    .col-md-9 {
+        width: 81%;
+    }
+
+    #windowDuAnChiTiet {
+        overflow: hidden;
+    }
+
+    #windowImportCanHo {
+        overflow-x: hidden;
+    }
+    /*.k-widget.k-tooltip-validation {
+        position: absolute;
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: -24px;
+    }*/
+    /*.k-numerictextbox .k-icon {
+
+        display: inline-block;
+        height: 1em;
+    }*/
+    .k-picker-wrap.k-state-default > .k-widget.k-tooltip-validation, .k-numeric-wrap.k-state-default > .k-widget.k-tooltip-validation {
+        display: block;
+        position: absolute;
+    }
+</style>
+<div id="bodyTotal" style="overflow:hidden">
+    <form kendo-validator="validator" ng-submit="validate($event)">
+        <div class="btbody">
+            <h3 style="text-align:center">Hồ sơ bệnh án</h3>
+            </br>
+            <div class="row newspace" style="margin-left:15%">
+                <div class="col-md-4 row">
+                    <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;"> Bệnh Nhân</div>
+                    <div class="col-md-7">
+                        <select id="cbbLoaiThuoc"
+                                kendo-combo-box
+                                k-data-text-field="'ten_BenhNhan'"
+                                k-data-value-field="'ID_BenhNhan'"
+                                k-filter="'contains'"
+                                k-auto-bind="true"
+                                k-min-length="3"
+                                k-data-source="BenhNhan"
+                                validationmessage="Vui lòng chọn {0}"
+                                ng-model="itemAdd.ID_BenhNhan"
+                                style="width: 100%"
+                                class="ng-valid ng-valid-required"
+                                data-role="combobox" aria-disabled="false"></select>
+                    </div>
+                </div>
+            <div class="col-md-4 row">
+                <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">Triệu chứng</div>
+                <div class="col-sm-7">
+                    <input type="text" id="txtTrieuChung" name="txtTrieuChung" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.TrieuChung" />
+                </div>
+            </div>
+           </div>
+            <div class="row newspace" style="margin-left:15%">
+                <div class="col-md-4 row">
+                    <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">Ngày Khám</div>
+                    <div class="col-sm-7">
+                        <span class="k-widget k-datepicker k-header ng-pristine ng-untouched ng-valid" style="width: 100%;">
+                        <span class="k-picker-wrap k-state-default">
+                            <input kendo-date-picker="" k-format="'dd/MM/yyyy'" ng-model="itemAdd.ngayKham" style="width: 100%;" class="ng-pristine ng-untouched ng-valid k-input" data-role="datepicker" type="text" role="combobox" aria-expanded="false" aria-disabled="false">
+                            <span unselectable="on" class="k-select" aria-label="select" role="button">
+                            <span class="k-icon k-i-calendar">
+                            </span>
+                            </span>
+                            </span>
+                        </span>
+                    </div>
+            </div>
+            <div class="col-md-4 row">
+                <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">
+                    Chuẩn đoán
+                </div>
+                <div class="col-sm-7">
+                    <input type="text" id="txtChuanDoan" name="txtChuanDoan" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="itemAdd.ChuanDoan" />
+                </div>
+            </div>              
+            </div>
+            <h3 style="text-align:center">Đơn thuốc</h3>
+            <div class="row newspace" style="margin-left:15%" >
+                <div class="col-md-4 row">
+                    <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">Tên thuốc</div>
+                    <div class="col-md-7">
+                        <span class="k-widget k-combobox k-header ng-valid ng-valid-required ng-pristine ng-untouched" style="width: 100%;">
+                        <span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default">
+                            <input class="k-input ng-valid ng-valid-required ng-pristine ng-untouched" type="text" autocomplete="off" title="" role="combobox" aria-expanded="false" tabindex="0" aria-disabled="false" aria-autocomplete="list" aria-owns="cbbLoaiThuoc_listbox" aria-busy="false" style="width: 100%;">
+                            <span tabindex="-1" unselectable="on" class="k-select">
+                            <span unselectable="on" class="k-icon k-i-arrow-s" role="button" tabindex="-1" aria-controls="cbbLoaiThuoc_listbox">select</span>
+                            </span>
+                            </span>
+                        <select id="cbbLoaiThuoc" kendo-combo-box="" k-data-text-field="'TenThuoc'" k-data-value-field="'TenThuoc'" k-filter="'contains'" k-auto-bind="true" k-min-length="3" k-data-source="Thuoc" validationmessage="Vui lòng chọn {0}" ng-model="detailAdd.TenThuoc" style="width: 100%; display: none;" class="ng-valid ng-valid-required ng-pristine ng-untouched" data-role="combobox" aria-disabled="false"></select>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4 row" style="Margin-left:50px">
+                    <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">Số Lượng</div>
+                    <div class="col-sm-7">
+                        <input type="text" id="txtTrieuChung" name="txtTrieuChung" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:30%" ng-model="detailAdd.SoLuong">
+                        <button class="btn btn-primary" type="submit" id="btnDetail" ng-click="btnDetail()">Thêm</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row newspace" style="margin-left:15%">
+                <div class="col-md-4 row">
+                    <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">Ghi Chú</div>
+                    <div class="col-md-7">
+                        <input type="text" id="txtGhiChu" name="txtChuanDoan" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:100%" ng-model="detailAdd.Ghi_Chu" />
+                    </div>
+                </div>
+            </div>
+            @*<div class="row newspace" style="margin-left:15%">
+                <div class="col-md-4 row">
+                    <div class="col-md-3" style="text-align:right;padding-top:5px;padding-left:0px;">
+                        Ghi Chú:
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="txtGhiChu" name="txtChuanDoan" class="k-textbox ng-pristine ng-valid k-valid ng-touched" style="width:40%" ng-model="itemAdd.GhiChu" />
+                    </div>
+                </div>
+            </div>*@
+            <div class="row newspace">
+
+                <div id="Detail_Grid" style="width:90%; margin-left:55px "></div>
+            </div>
+            <div class="row" align="center">
+                <div class="btn-row">
+                    <button class="btn btn-primary" type="submit" id="btnLuu" ng-click="btnLuu()">Lưu</button>
+                    <button type="button" class="btn btn-primary" id="btnHuy" ng-click="btnHuy()">Hủy</button>&nbsp;
+                </div>
+            </div>
+            </div>
+</form>
+</div>
